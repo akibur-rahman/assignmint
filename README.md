@@ -3,9 +3,9 @@
 <div align="center">
   <img src="assets/appicon/appicon.png" alt="AssignMint Logo" width="200"/>
   
-  [![Flutter](https://img.shields.io/badge/Flutter-3.19.0-blue.svg)](https://flutter.dev)
+  [![Flutter](https://img.shields.io/badge/Flutter-3.29.2-blue.svg)](https://flutter.dev)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-  [![Release](https://img.shields.io/badge/Release-v1.0.0-orange.svg)](https://github.com/akibur-rahman/assignmint/releases)
+  [![Release](https://img.shields.io/badge/Release-v1.0.6-orange.svg)](https://github.com/akibur-rahman/assignmint/releases)
 </div>
 
 ## 🎥 Demo
@@ -62,9 +62,7 @@
 ## 📱 Screenshots
 
 <div align="center">
-  <img src="screenshots/home.png" alt="Home Screen" width="200"/>
-  <img src="screenshots/assignment.png" alt="Assignment Screen" width="200"/>
-  <img src="screenshots/ai_assist.png" alt="AI Assistant" width="200"/>
+  <img src="images/AssignMint.png" alt="Home Screen" width="200"/>
 </div>
 
 ## 🛠️ Built With
