@@ -99,7 +99,7 @@ Akibur Rohman - [@AkiburRahman](https://www.linkedin.com/in/me-akiburrahman/)
 
 Project Link: [Github](https://github.com/akibur-rahman/assignmint)
 
-Email: [Email](me.akiburrahman@gmail.com)
+Email: [me.akiburrahman@gmail.com](me.akiburrahman@gmail.com)
 
 ---
 
