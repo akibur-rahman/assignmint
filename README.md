@@ -1,7 +1,7 @@
 # 📱 AssignMint
 
 <div align="center">
-  <img src="assets/aappicon.appicon.png" alt="AssignMint Logo" width="200"/>
+  <img src="assets/appicon/appicon.png" alt="AssignMint Logo" width="200"/>
   
   [![Flutter](https://img.shields.io/badge/Flutter-3.19.0-blue.svg)](https://flutter.dev)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
