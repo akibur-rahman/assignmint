@@ -1,16 +1,105 @@
-# assignmint
+# 📱 AssignMint
 
-A new Flutter project.
+<div align="center">
+  <img src="assets/app_icon.png" alt="AssignMint Logo" width="200"/>
+  
+  [![Flutter](https://img.shields.io/badge/Flutter-3.19.0-blue.svg)](https://flutter.dev)
+  [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+  [![Release](https://img.shields.io/badge/Release-v1.0.0-orange.svg)](https://github.com/yourusername/assignmint/releases)
+</div>
 
-## Getting Started
+## 🎥 Demo
 
-This project is a starting point for a Flutter application.
+[![AssignMint Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 📝 **Smart Assignment Management**: Create and organize your assignments effortlessly
+- 🤖 **AI-Powered Assistance**: Get help with your assignments using Gemini AI
+- 📊 **Progress Tracking**: Monitor your assignment completion status
+- 🌙 **Dark Mode Support**: Comfortable viewing experience in any lighting
+- 📱 **Cross-Platform**: Available on Android and iOS devices
+- 🔒 **Secure**: Your data is stored locally on your device
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Flutter SDK (3.19.0 or higher)
+- Dart SDK (3.3.0 or higher)
+- Android Studio / VS Code
+- Android SDK (for Android development)
+- Xcode (for iOS development, macOS only)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/assignmint.git
+   cd assignmint
+   ```
+
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Set up environment variables**
+   - Create a `.env` file in the `assets` directory
+   - Add your Gemini API key:
+     ```
+     API_KEY=your_api_key_here
+     ```
+
+4. **Run the app**
+   ```bash
+   flutter run
+   ```
+
+## 📱 Screenshots
+
+<div align="center">
+  <img src="screenshots/home.png" alt="Home Screen" width="200"/>
+  <img src="screenshots/assignment.png" alt="Assignment Screen" width="200"/>
+  <img src="screenshots/ai_assist.png" alt="AI Assistant" width="200"/>
+</div>
+
+## 🛠️ Built With
+
+- [Flutter](https://flutter.dev) - UI Framework
+- [GetX](https://pub.dev/packages/get) - State Management
+- [Flutter Gemini](https://pub.dev/packages/flutter_gemini) - AI Integration
+- [Get Storage](https://pub.dev/packages/get_storage) - Local Storage
+- [Flutter Dotenv](https://pub.dev/packages/flutter_dotenv) - Environment Variables
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Flutter Team](https://flutter.dev) for the amazing framework
+- [Google](https://google.com) for Gemini AI
+- All contributors and supporters of the project
+
+## 📞 Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+
+Project Link: [https://github.com/yourusername/assignmint](https://github.com/yourusername/assignmint)
+
+---
+
+<div align="center">
+  Made with ❤️ by Your Name
+</div>

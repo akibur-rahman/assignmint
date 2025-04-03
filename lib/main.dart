@@ -14,7 +14,7 @@ void main() async {
   await GetStorage.init();
   await TokenService().initialize();
   await dotenv.load(fileName: "assets/.env");
-  final apiKey = dotenv.env['api_key'] ?? '';
+  final apiKey = dotenv.env['API_KEY'] ?? '';
   if (apiKey.isEmpty) {
     throw Exception('GEMINI_API_KEY not found in .env file');
   }
