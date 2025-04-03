@@ -12,7 +12,7 @@
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">
-    <img src="https://www.youtube.com/s/desktop/0b0925c0/img/favicon_144x144.png" width="32"/>
+    <img src="https://www.freeiconspng.com/uploads/download-youtube-logo-png-clipart-3.png" width="32"/>
     Watch on YouTube
   </a>
 </div>
