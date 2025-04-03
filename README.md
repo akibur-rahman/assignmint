@@ -5,12 +5,19 @@
   
   [![Flutter](https://img.shields.io/badge/Flutter-3.19.0-blue.svg)](https://flutter.dev)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-  [![Release](https://img.shields.io/badge/Release-v1.0.0-orange.svg)](https://github.com/yourusername/assignmint/releases)
+  [![Release](https://img.shields.io/badge/Release-v1.0.0-orange.svg)](https://github.com/akibur-rahman/assignmint/releases)
 </div>
 
 ## 🎥 Demo
 
-[![AssignMint Demo]("images/youtube.png")](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">
+    <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg" alt="AssignMint Demo" width="600"/>
+    <br/>
+    <img src="https://www.youtube.com/s/desktop/0b0925c0/img/favicon_144x144.png" alt="YouTube" width="32"/>
+    Watch on YouTube
+  </a>
+</div>
 
 ## ✨ Features
 
