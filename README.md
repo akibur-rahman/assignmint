@@ -28,7 +28,7 @@
 
 ### Prerequisites
 
-- Flutter SDK (3.19.0 or higher)
+- Flutter SDK (3.29.2 or higher)
 - Dart SDK (3.3.0 or higher)
 - Android Studio / VS Code
 - Android SDK (for Android development)

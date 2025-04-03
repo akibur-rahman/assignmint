@@ -26,10 +26,20 @@ jobs:
 
       - name: Create .env file
         run: |
+          mkdir -p assets
           echo "API_KEY=${{ secrets.API_KEY }}" > assets/.env
+          cat assets/.env
+
+      - name: Debug directory structure
+        run: |
+          ls -la
+          ls -la assets/
+          cat assets/.env
 
       - name: Build APK
-        run: flutter build apk --release
+        run: |
+          flutter build apk --release --verbose
+          ls -la build/app/outputs/flutter-apk/
 
       - name: Create Release
         id: create_release
