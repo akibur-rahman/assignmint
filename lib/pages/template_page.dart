@@ -69,21 +69,19 @@ class _TemplatePageState extends State<TemplatePage> {
   }
 
   void _updateSectionTitle(String id, String newTitle) {
-    setState(() {
-      final index = _sections.indexWhere((section) => section.id == id);
-      if (index != -1) {
-        _sections[index] = _sections[index].copyWith(title: newTitle);
-      }
-    });
+    final index = _sections.indexWhere((section) => section.id == id);
+    if (index != -1) {
+      final updatedSection = _sections[index].copyWith(title: newTitle);
+      _sections[index] = updatedSection;
+    }
   }
 
   void _updateSectionPrompt(String id, String newPrompt) {
-    setState(() {
-      final index = _sections.indexWhere((section) => section.id == id);
-      if (index != -1) {
-        _sections[index] = _sections[index].copyWith(prompt: newPrompt);
-      }
-    });
+    final index = _sections.indexWhere((section) => section.id == id);
+    if (index != -1) {
+      final updatedSection = _sections[index].copyWith(prompt: newPrompt);
+      _sections[index] = updatedSection;
+    }
   }
 
   void _navigateToAssignmentPage() {
@@ -140,12 +138,20 @@ class _TemplatePageState extends State<TemplatePage> {
                               height: 150,
                             ),
                             const SizedBox(height: 16),
-                            const Text('Generating template...'),
+                            const Text(
+                              'Generating template...',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: AppTheme.primaryGreen,
+                              ),
+                            ),
                           ],
                         ),
                       )
                     : Column(
                         children: [
+                          const SizedBox(height: 8),
                           TextField(
                             controller: _typeController,
                             decoration: const InputDecoration(

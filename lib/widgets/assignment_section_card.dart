@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:assignmint/models/assignment_section_model.dart';
 
-class AssignmentSectionCard extends StatelessWidget {
+class AssignmentSectionCard extends StatefulWidget {
   final AssignmentSection section;
   final VoidCallback onDelete;
   final Function(String) onTitleChanged;
@@ -16,6 +16,34 @@ class AssignmentSectionCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<AssignmentSectionCard> createState() => _AssignmentSectionCardState();
+}
+
+class _AssignmentSectionCardState extends State<AssignmentSectionCard> {
+  late TextEditingController _titleController;
+  late TextEditingController _promptController;
+  late FocusNode _titleFocusNode;
+  late FocusNode _promptFocusNode;
+
+  @override
+  void initState() {
+    super.initState();
+    _titleController = TextEditingController(text: widget.section.title);
+    _promptController = TextEditingController(text: widget.section.prompt);
+    _titleFocusNode = FocusNode();
+    _promptFocusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    _titleController.dispose();
+    _promptController.dispose();
+    _titleFocusNode.dispose();
+    _promptFocusNode.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -28,30 +56,36 @@ class AssignmentSectionCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextField(
-                    controller: TextEditingController(text: section.title),
+                    controller: _titleController,
+                    focusNode: _titleFocusNode,
                     decoration: const InputDecoration(
                       labelText: 'Section Title',
                       border: OutlineInputBorder(),
                     ),
-                    onChanged: onTitleChanged,
+                    onChanged: (value) {
+                      widget.onTitleChanged(value);
+                    },
                   ),
                 ),
                 IconButton(
                   icon: const Icon(Icons.delete_outline),
-                  onPressed: onDelete,
+                  onPressed: widget.onDelete,
                   color: Colors.red,
                 ),
               ],
             ),
             const SizedBox(height: 8),
             TextField(
-              controller: TextEditingController(text: section.prompt),
+              controller: _promptController,
+              focusNode: _promptFocusNode,
               decoration: const InputDecoration(
                 labelText: 'Section Prompt',
                 border: OutlineInputBorder(),
               ),
               maxLines: 3,
-              onChanged: onPromptChanged,
+              onChanged: (value) {
+                widget.onPromptChanged(value);
+              },
             ),
           ],
         ),

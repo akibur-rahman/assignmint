@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:assignmint/models/cover_page_model.dart';
 import 'package:intl/intl.dart';
+import 'package:assignmint/utils/theme/theme.dart';
 
 class CoverPageForm extends StatefulWidget {
   final Function(CoverPageDetails) onSave;
@@ -20,7 +21,7 @@ class _CoverPageFormState extends State<CoverPageForm> {
   final _facultyController = TextEditingController();
   final _semesterController = TextEditingController();
   final _assignmentTypeController = TextEditingController();
-  final _labNumberController = TextEditingController();
+  final _assignmentNumberController = TextEditingController();
   final _courseTitleController = TextEditingController();
   final _courseCodeController = TextEditingController();
   final _sectionController = TextEditingController();
@@ -47,7 +48,7 @@ class _CoverPageFormState extends State<CoverPageForm> {
           _facultyController.text = details.faculty;
           _semesterController.text = details.semester;
           _assignmentTypeController.text = details.assignmentType;
-          _labNumberController.text = details.labNumber.toString();
+          _assignmentNumberController.text = details.labNumber.toString();
           _courseTitleController.text = details.courseTitle;
           _courseCodeController.text = details.courseCode;
           _sectionController.text = details.section;
@@ -98,7 +99,7 @@ class _CoverPageFormState extends State<CoverPageForm> {
         faculty: _facultyController.text,
         semester: _semesterController.text,
         assignmentType: _assignmentTypeController.text,
-        labNumber: int.parse(_labNumberController.text),
+        labNumber: int.parse(_assignmentNumberController.text),
         courseTitle: _courseTitleController.text,
         courseCode: _courseCodeController.text,
         section: _sectionController.text,
@@ -192,15 +193,15 @@ class _CoverPageFormState extends State<CoverPageForm> {
             ),
             const SizedBox(height: 16),
             TextFormField(
-              controller: _labNumberController,
+              controller: _assignmentNumberController,
               decoration: const InputDecoration(
-                labelText: 'Lab Number',
+                labelText: 'Assignment Number Number',
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
               validator: (value) {
                 if (value?.isEmpty ?? true) {
-                  return 'Please enter lab number';
+                  return 'Please enter assignment number';
                 }
                 if (int.tryParse(value!) == null) {
                   return 'Please enter a valid number';
@@ -265,7 +266,10 @@ class _CoverPageFormState extends State<CoverPageForm> {
                     ? 'Select Class Date'
                     : 'Class Date: ${DateFormat('MMMM d, y').format(_classDate!)}',
               ),
-              trailing: const Icon(Icons.calendar_today),
+              trailing: const Icon(
+                Icons.calendar_today,
+                color: AppTheme.primaryGreen,
+              ),
               onTap: () => _selectDate(context, true),
             ),
             if (_classDate == null)
@@ -280,7 +284,10 @@ class _CoverPageFormState extends State<CoverPageForm> {
                     ? 'Select Submission Date'
                     : 'Submission Date: ${DateFormat('MMMM d, y').format(_submissionDate!)}',
               ),
-              trailing: const Icon(Icons.calendar_today),
+              trailing: const Icon(
+                Icons.calendar_today,
+                color: AppTheme.primaryGreen,
+              ),
               onTap: () => _selectDate(context, false),
             ),
             if (_submissionDate == null)
@@ -302,7 +309,17 @@ class _CoverPageFormState extends State<CoverPageForm> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _handleSubmit,
-              child: const Text('Save'),
+              child: Text(
+                'Save',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppTheme.primaryGreen,
+              ),
             ),
           ],
         ),
@@ -317,7 +334,7 @@ class _CoverPageFormState extends State<CoverPageForm> {
     _facultyController.dispose();
     _semesterController.dispose();
     _assignmentTypeController.dispose();
-    _labNumberController.dispose();
+    _assignmentNumberController.dispose();
     _courseTitleController.dispose();
     _courseCodeController.dispose();
     _sectionController.dispose();

@@ -63,8 +63,6 @@ class PdfController extends GetxController {
       );
 
       if (pdfFile == null) return;
-
-      // Share PDF
       await PdfExportService.sharePdf(pdfFile);
     } catch (e) {
       Get.snackbar(

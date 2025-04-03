@@ -6,7 +6,6 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:flutter/material.dart' as material;
 import 'package:open_file/open_file.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:assignmint/models/cover_page_model.dart';
 import 'package:assignmint/widgets/cover_page_dialog.dart';
 
 class PdfExportService {
@@ -306,11 +305,31 @@ class PdfExportService {
 
     // Save the PDF file
     final output = await getTemporaryDirectory();
+    final String sanitizedTitle = _sanitizeFilename(title);
     final String filename =
-        '${title.replaceAll(' ', '_')}_${DateTime.now().millisecondsSinceEpoch}.pdf';
+        '${sanitizedTitle}_${DateTime.now().millisecondsSinceEpoch}.pdf';
     final file = File('${output.path}/$filename');
     await file.writeAsBytes(await pdf.save());
     return file;
+  }
+
+  static String _sanitizeFilename(String title) {
+    // Remove any AI-generated options or explanations
+    if (title.contains('Here are a few options')) {
+      // Extract the first option if it exists
+      final match = RegExp(r'Option 1[^:]*:\s*>\s*([^\n]+)').firstMatch(title);
+      if (match != null) {
+        title = match.group(1) ?? title;
+      }
+    }
+
+    // Remove special characters and limit length
+    return title
+        .replaceAll(RegExp(r'[^\w\s-]'), '') // Remove special characters
+        .replaceAll(RegExp(r'\s+'), '_') // Replace spaces with underscores
+        .substring(
+            0, title.length.clamp(0, 50)) // Limit length to 50 characters
+        .trim();
   }
 
   static Future<void> sharePdf(File pdfFile) async {

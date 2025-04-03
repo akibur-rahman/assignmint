@@ -2,6 +2,7 @@ import 'package:assignmint/controllers/pdf_controller.dart';
 import 'package:assignmint/pages/main_scaffold_page.dart';
 import 'package:assignmint/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:assignmint/controllers/assignment_controller.dart';
@@ -19,6 +20,11 @@ void main() async {
     throw Exception('GEMINI_API_KEY not found in .env file');
   }
   Gemini.init(apiKey: apiKey);
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
   runApp(App());
 }
 

@@ -73,17 +73,23 @@ class _AssignmentPageState extends State<AssignmentPage> {
     });
 
     try {
+      // First, generate a proper title
+      final titleResponse = await Gemini.instance.text(
+        'Create a specific, professional, and concise title for a ${widget.assignmentType} about: ${_promptController.text}\n\n'
+        'Rules:\n'
+        '1. Return ONLY the title, nothing else\n'
+        '2. Make it specific to the topic\n'
+        '3. Keep it under 10 words\n'
+        '4. Do not include any explanations or options\n'
+        '5. Do not use generic titles like "Untitled Assignment"',
+      );
+      _assignmentTitle = _cleanText(titleResponse?.output ?? 'Assignment');
+
+      // Then generate the content
       final StringBuffer fullPrompt = StringBuffer();
       fullPrompt.writeln(
         'Create a ${widget.assignmentType} with the following sections:\n',
       );
-
-      // Add title section first with specific instructions
-      fullPrompt.writeln('Title:');
-      fullPrompt.writeln(
-        'Create a clear, descriptive, and professional title for this assignment. The title should be specific to the topic and type of assignment. Do not use generic titles like "Untitled Assignment".',
-      );
-      fullPrompt.writeln();
 
       for (var section in widget.sections) {
         if (section.title.toLowerCase() != 'title') {
@@ -104,33 +110,8 @@ class _AssignmentPageState extends State<AssignmentPage> {
       final estimatedTokens = (fullPrompt.length + cleanedResponse.length) ~/ 4;
       await tokenService.addTokens(estimatedTokens);
 
-      // Extract title from response
-      final titleMatch = RegExp(
-        r'Title:\s*(.+?)(?:\n|$)',
-        caseSensitive: false,
-        multiLine: true,
-      ).firstMatch(cleanedResponse);
-
-      if (titleMatch != null) {
-        _assignmentTitle = titleMatch.group(1)!.trim();
-        // Remove the title section from the content
-        _generatedAssignment = cleanedResponse
-            .replaceFirst(
-              RegExp(r'Title:\s*.+?(?:\n|$)', multiLine: true),
-              '',
-            )
-            .trim();
-      } else {
-        // If no title found, generate a specific title based on the topic
-        final titleResponse = await Gemini.instance.text(
-          'Create a specific and professional title for a ${widget.assignmentType} about: ${_promptController.text}',
-        );
-        _assignmentTitle = _cleanText(titleResponse?.output ?? 'Assignment');
-        _generatedAssignment = cleanedResponse;
-      }
-
       setState(() {
-        _generatedAssignment = _generatedAssignment;
+        _generatedAssignment = cleanedResponse;
         _isGeneratingAssignment = false;
       });
 
@@ -253,7 +234,14 @@ class _AssignmentPageState extends State<AssignmentPage> {
                         height: 150,
                       ),
                       const SizedBox(height: 16),
-                      const Text('Generating your assignment...'),
+                      const Text(
+                        'Generating your assignment...',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: AppTheme.primaryGreen,
+                        ),
+                      ),
                     ],
                   ),
                 ),
