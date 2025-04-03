@@ -98,6 +98,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Akibur Rohman - [@AkiburRahman](https://www.linkedin.com/in/me-akiburrahman/)
 
 Project Link: [Github](https://github.com/akibur-rahman/assignmint)
+
 Email: [Email](me.akiburrahman@gmail.com)
 
 ---
