@@ -24,11 +24,24 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Validate API Key
+        run: |
+          if [ -z "${{ secrets.API_KEY }}" ]; then
+            echo "Error: API_KEY secret is not set"
+            exit 1
+          fi
+          echo "API Key is present"
+
       - name: Create .env file
         run: |
           mkdir -p assets
           echo "API_KEY=${{ secrets.API_KEY }}" > assets/.env
+          echo "Verifying .env file contents:"
           cat assets/.env
+          if [ ! -s assets/.env ]; then
+            echo "Error: .env file is empty"
+            exit 1
+          fi
 
       - name: Debug directory structure
         run: |
