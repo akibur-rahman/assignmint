@@ -17,8 +17,7 @@
 - 📝 **Smart Assignment Management**: Create and organize your assignments effortlessly
 - 🤖 **AI-Powered Assistance**: Get help with your assignments using Gemini AI
 - 📊 **Progress Tracking**: Monitor your assignment completion status
-- 🌙 **Dark Mode Support**: Comfortable viewing experience in any lighting
-- 📱 **Cross-Platform**: Available on Android and iOS devices
+- 📱 **Cross-Platform**: Available on Android and iOS devices(IOS coming soon)
 - 🔒 **Secure**: Your data is stored locally on your device
 
 ## 🚀 Getting Started
@@ -35,7 +34,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/assignmint.git
+   git clone https://github.com/akibur-rahman/assignmint.git
    cd assignmint
    ```
 
@@ -94,12 +93,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+Akibur Rohman - [@Akibur](https://www.linkedin.com/in/akibur-rahman-7309b3228/)
 
-Project Link: [https://github.com/yourusername/assignmint](https://github.com/yourusername/assignmint)
+Project Link: [https://github.com/akibur-rahman/assignmint](https://github.com/akibur-rahman/assignmint)
 
 ---
 
 <div align="center">
-  Made with ❤️ by Your Name
+  Made with ❤️ by Md Akibur Rohman
 </div>
