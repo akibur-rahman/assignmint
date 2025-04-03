@@ -62,7 +62,7 @@
 ## 📱 Screenshots
 
 <div align="center">
-  <img src="screenshots/AssignMint.png" alt="AssignMint" width="200"/>
+  <img src="screenshots/AssignMint.png" alt="AssignMint" />
 </div>
 
 ## 🛠️ Built With
